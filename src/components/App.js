@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 
-import { Navigation } from './Navigation'
-import { MainView } from './MainView'
+import Navigation from './Navigation'
+import MainView from './MainView'
 
 import theme from '../theme.js'
 
-class App extends Component {
+/**
+ * The main app that contains the entire page.
+ * This also contains the theme provider.
+ *
+ * @class App
+ * @extends {Component}
+ */
+export default class App extends Component {
     render() {
         return (
         <MuiThemeProvider theme={theme}>
@@ -16,5 +23,3 @@ class App extends Component {
         )
     }
 }
-
-export default App
