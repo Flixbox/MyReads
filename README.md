@@ -11,3 +11,8 @@ MyReads is an application for keeping track of the books you're currently readin
 ## Development
 
 While you're running the server, feel free to adjust the files. The server files will be updated automatically and you'll see the changes in the browser.
+
+## Usage
+
+* You can move books around the different shelves.
+* You can use the search option to search for different books.
