@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Button, IconButton, SwipeableDrawer, Divider, List, ListItem, ListItemIcon, ListItemText, Toolbar, AppBar, Typography } from '@material-ui/core'
+import { Button, IconButton, Toolbar, AppBar, Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
 const styles = {
@@ -62,30 +62,6 @@ class Navigation extends Component {
                         </Toolbar>
                     </AppBar>
                 </div>
-                <Button onClick={this.toggleDrawer('left', true)}>Open Left</Button>
-                <SwipeableDrawer
-                    open={this.state.left}
-                    onClose={this.toggleDrawer('left', false)}
-                    onOpen={this.toggleDrawer('left', true)}
-                >
-                    <div
-                        tabIndex={0}
-                        role="button"
-                        onClick={this.toggleDrawer('left', false)}
-                        onKeyDown={this.toggleDrawer('left', false)}
-                    >
-                        <div className={classes.list}>
-                            <ListItem button>
-                                <ListItemText primary="Library" />
-                            </ListItem>
-                            <Divider />
-                            <ListItem button>
-                                <ListItemText primary="Search" />
-                            </ListItem>
-                            <Divider />
-                        </div>
-                    </div>
-                </SwipeableDrawer>
             </div>
         )
     }
