@@ -17,7 +17,7 @@ While you're running the server, feel free to adjust the files. The server files
 * Configure your GitHub site in `package.json`.
 * Run `yarn run deploy` to deploy the site to GitHub Pages.
 
-[Guide](https://reactgo.com/deploy-react-app-github-pages/)
+[Guide](https://reactgo.com/deploy-react-app-github-pages/) (We're using HashRouter instead of BrowserRouter to get GitHub routing to work)
 
 ## Usage
 
