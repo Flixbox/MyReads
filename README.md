@@ -23,3 +23,7 @@ While you're running the server, feel free to adjust the files. The server files
 
 * You can move books around the different shelves.
 * You can use the search option to search for different books.
+
+## Demo
+
+You can view the app [here](https://flixbox.github.io/MyReads/).
