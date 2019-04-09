@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import {  } from '@material-ui/core'
+import { TextField, Grid } from '@material-ui/core'
 
 const styles = {
-
+    rootContainer: {
+        padding: "5px"
+    },
+    searchField: {
+        width: "100%"
+    }
 }
 
 /**
@@ -18,9 +23,14 @@ class Search extends Component {
         const { classes } = this.props
 
         return (
-            <div>
-                Search
-            </div>
+            <Grid container className={classes.rootContainer}>
+                <Grid item xs={12}>
+                    <TextField
+                        label="Search"
+                        className={classes.searchField}
+                    />
+                </Grid>
+            </Grid>
         )
     }
 }
