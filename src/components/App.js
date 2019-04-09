@@ -20,7 +20,7 @@ export default class App extends Component {
 
         return (
             <MuiThemeProvider theme={theme}>
-                <Router basename={process.env.PUBLIC_URL}>
+                <Router>
                     <Navigation/>
                     <MainView/>
                 </Router>
