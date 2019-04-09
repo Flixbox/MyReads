@@ -3,8 +3,8 @@ import { withStyles } from '@material-ui/core/styles'
 import {  } from '@material-ui/core'
 import { Route } from "react-router-dom"
 
-import Library from "./Library"
-import Search from "./Search"
+import LibraryView from "./LibraryView"
+import SearchView from "./SearchView"
 
 const styles = {
 
@@ -23,8 +23,8 @@ class MainView extends Component {
 
         return (
             <div>
-                <Route exact path="/" component={Library} />
-                <Route path="/search" component={Search} />
+                <Route exact path="/" component={LibraryView} />
+                <Route path="/search" component={SearchView} />
             </div>
         )
     }

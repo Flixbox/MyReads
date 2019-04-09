@@ -13,7 +13,7 @@ const styles = {
  * @class MainView
  * @extends {Component}
  */
-class Library extends Component {
+class LibraryView extends Component {
     render () {
         const { classes } = this.props
 
@@ -25,4 +25,4 @@ class Library extends Component {
     }
 }
 
-export default withStyles(styles)(Library)
+export default withStyles(styles)(LibraryView)

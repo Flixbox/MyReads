@@ -7,7 +7,7 @@ const styles = {
         padding: "5px"
     },
     searchField: {
-        width: "100%"
+
     }
 }
 
@@ -18,7 +18,13 @@ const styles = {
  * @class MainView
  * @extends {Component}
  */
-class Search extends Component {
+class SearchView extends Component {
+
+    handleSearch = e => {
+        console.log(e)
+        console.log(e.target.value)
+    }
+
     render () {
         const { classes } = this.props
 
@@ -28,6 +34,9 @@ class Search extends Component {
                     <TextField
                         label="Search"
                         className={classes.searchField}
+                        autoFocus
+                        fullWidth
+                        onChange={this.handleSearch}
                     />
                 </Grid>
             </Grid>
@@ -35,4 +44,4 @@ class Search extends Component {
     }
 }
 
-export default withStyles(styles)(Search)
+export default withStyles(styles)(SearchView)
