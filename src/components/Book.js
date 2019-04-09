@@ -30,6 +30,7 @@ const styles = theme => ({
 /**
  * This represents a single book. 
  * It provides all the information that was provided to it in an interactive way.
+ * The transformation and preset are taken from the link below.
  * 
  * @see https://material-ui.com/demos/cards/
  *  
@@ -58,21 +59,29 @@ class Book extends Component {
         if(!authors) authors = []
         if(!categories) categories = []
 
+        let image = <div></div>
+        if(imageLinks) {
+            image = <CardMedia
+                className={classes.media}
+                image={imageLinks.thumbnail}
+                title="Book thumbnail"
+            />
+        }
+
         return (
             <Card className={classes.card}>
                 <CardHeader
                     title={title}
                     subheader={subtitle}
                 />
-                <CardMedia
-                    className={classes.media}
-                    image={imageLinks.thumbnail}
-                    title="Book thumbnail"
-                />
+                {image}
                 <CardContent>
                     {categories.map(category => 
                         <Chip label={category} key={category} />
                     )}
+                    <Typography component="p">
+                        Authors:
+                    </Typography>
                     <Typography component="p">
                         {authors.join(', ')}
                     </Typography>
