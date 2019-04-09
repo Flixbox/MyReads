@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
 import { HashRouter as Router } from "react-router-dom"
 
 import Navigation from './Navigation'
@@ -17,12 +18,15 @@ import theme from '../theme.js'
 export default class App extends Component {
     render() {
         return (
-            <MuiThemeProvider theme={theme}>
-                <Router>
-                    <Navigation/>
-                    <MainView/>
-                </Router>
-            </MuiThemeProvider>
+            <div>
+                <MuiThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <Router>
+                        <Navigation/>
+                        <MainView/>
+                    </Router>
+                </MuiThemeProvider>
+            </div>
         )
     }
 }
