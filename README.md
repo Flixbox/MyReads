@@ -12,6 +12,13 @@ MyReads is an application for keeping track of the books you're currently readin
 
 While you're running the server, feel free to adjust the files. The server files will be updated automatically and you'll see the changes in the browser.
 
+## Deployment
+
+* Configure your GitHub site in `package.json`.
+* Run `yarn run deploy` to deploy the site to GitHub Pages.
+
+[Guide](https://reactgo.com/deploy-react-app-github-pages/)
+
 ## Usage
 
 * You can move books around the different shelves.
