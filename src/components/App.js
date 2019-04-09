@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import { BrowserRouter as Router } from "react-router-dom"
+import { HashRouter as Router } from "react-router-dom"
 
 import Navigation from './Navigation'
 import MainView from './MainView'
@@ -16,9 +16,11 @@ import theme from '../theme.js'
  */
 export default class App extends Component {
     render() {
+        console.log("public url", process.env.PUBLIC_URL)
+
         return (
             <MuiThemeProvider theme={theme}>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                     <Navigation/>
                     <MainView/>
                 </Router>
