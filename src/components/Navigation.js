@@ -43,7 +43,7 @@ class Navigation extends Component {
             <div>
                 <div className={classes.root}>
                     <AppBar position="static">
-                        <Toolbar>
+                        <Toolbar className={classes.navBar}>
                             <Typography variant="h6" color="inherit" className={classes.grow}>
                                 MyReads
                             </Typography>
