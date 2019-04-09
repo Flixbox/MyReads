@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/core/styles'
 import { TextField, Grid } from '@material-ui/core'
 import { search } from '../BooksAPI'
 
+import BookCollection from './BookCollection'
+
 const styles = {
     rootContainer: {
         padding: "5px"
@@ -21,14 +23,26 @@ const styles = {
  */
 class SearchView extends Component {
 
+    state = {
+        searchString: '',
+        books: {}
+    }
+
     handleSearch = e => {
-        const searchString = e.target.value
-        this.searchBooks(searchString)
+        const newSearchString = e.target.value
+        this.setState(prevState => ({
+            ...prevState,
+            searchString: newSearchString
+        }))
+        this.searchBooks(newSearchString)
     }
 
     searchBooks = searchString => {
-        search(searchString).then(
-            result => console.log(result)
+        search(searchString).then( result =>
+            this.setState(prevState => ({
+                ...prevState,
+                books: result
+            }))
         )
     }
 
@@ -40,12 +54,16 @@ class SearchView extends Component {
                 <Grid item xs={12}>
                     <TextField
                         label="Search"
+                        value={this.state.searchString}
                         className={classes.searchField}
                         autoFocus
                         fullWidth
                         onChange={this.handleSearch}
                     />
                 </Grid>
+                <BookCollection
+                    books={this.state.books}
+                />
             </Grid>
         )
     }
