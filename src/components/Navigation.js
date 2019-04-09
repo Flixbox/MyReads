@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Button, IconButton, Toolbar, AppBar, Typography } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 const styles = {
     list: {
@@ -19,6 +20,8 @@ const styles = {
     menuButton: {
         marginLeft: -12,
         marginRight: 20,
+        textDecoration: 'none',
+        color: 'white'
     },
 }
 
@@ -52,13 +55,16 @@ class Navigation extends Component {
                 <div className={classes.root}>
                     <AppBar position="static">
                         <Toolbar>
-                        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" color="inherit" className={classes.grow}>
-                            News
-                        </Typography>
-                        <Button color="inherit">Login</Button>
+                        
+                            <Typography variant="h6" color="inherit" className={classes.grow}>
+                                MyReads
+                            </Typography>
+                            <Link to="/" className={classes.menuButton}>
+                                <Button color="inherit">Library</Button>
+                            </Link>
+                            <Link to="/search" className={classes.menuButton}>
+                                <Button color="inherit">Search</Button>
+                            </Link>
                         </Toolbar>
                     </AppBar>
                 </div>
