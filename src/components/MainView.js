@@ -3,12 +3,7 @@ import { withStyles } from '@material-ui/core/styles'
 import {  } from '@material-ui/core'
 
 const styles = {
-    list: {
-        width: 250,
-    },
-    fullList: {
-        width: 'auto',
-    },
+
 }
 
 /**
