@@ -16,8 +16,6 @@ import theme from '../theme.js'
  */
 export default class App extends Component {
     render() {
-        console.log("public url", process.env.PUBLIC_URL)
-
         return (
             <MuiThemeProvider theme={theme}>
                 <Router>
