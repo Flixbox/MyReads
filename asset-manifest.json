@@ -1,11 +1,11 @@
 {
-  "main.js": "/MyReads/static/js/main.d9d558dc.chunk.js",
-  "main.js.map": "/MyReads/static/js/main.d9d558dc.chunk.js.map",
+  "main.js": "/MyReads/static/js/main.a0e31177.chunk.js",
+  "main.js.map": "/MyReads/static/js/main.a0e31177.chunk.js.map",
   "runtime~main.js": "/MyReads/static/js/runtime~main.72789c0d.js",
   "runtime~main.js.map": "/MyReads/static/js/runtime~main.72789c0d.js.map",
-  "static/js/2.9512b71f.chunk.js": "/MyReads/static/js/2.9512b71f.chunk.js",
-  "static/js/2.9512b71f.chunk.js.map": "/MyReads/static/js/2.9512b71f.chunk.js.map",
+  "static/js/2.95eaa90c.chunk.js": "/MyReads/static/js/2.95eaa90c.chunk.js",
+  "static/js/2.95eaa90c.chunk.js.map": "/MyReads/static/js/2.95eaa90c.chunk.js.map",
   "index.html": "/MyReads/index.html",
-  "precache-manifest.2876f1539f0b6d0f9cbd370c83250496.js": "/MyReads/precache-manifest.2876f1539f0b6d0f9cbd370c83250496.js",
+  "precache-manifest.c6a07a6b194f219f80039d352489bb3c.js": "/MyReads/precache-manifest.c6a07a6b194f219f80039d352489bb3c.js",
   "service-worker.js": "/MyReads/service-worker.js"
 }
