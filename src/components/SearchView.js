@@ -15,10 +15,10 @@ const styles = {
 }
 
 /**
- *  This represents the main application next to the navigation component.
+ *  This represents the search page. It allows the user to search for books.
  *  
  * @export
- * @class MainView
+ * @class SearchView
  * @extends {Component}
  */
 class SearchView extends Component {
@@ -28,6 +28,12 @@ class SearchView extends Component {
         books: []
     }
 
+    /**
+     * Triggered when the search field is updated.
+     * This will fire a new search as long as the search field is filled.
+     *
+     * @memberof SearchView
+     */
     handleSearch = e => {
         const newSearchString = e.target.value
         this.setState(prevState => ({
@@ -44,6 +50,11 @@ class SearchView extends Component {
         }
     }
 
+    /**
+     * This method will fire off an API request that searches for books.
+     *
+     * @memberof SearchView
+     */
     searchBooks = searchString => {
         search(searchString).then( result => {
             let list = []
