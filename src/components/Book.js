@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Chip, Typography, Collapse, IconButton, Card, CardHeader, CardMedia, CardContent, CardActions } from '@material-ui/core'
+import { Chip, Typography, Select, MenuItem, Collapse, IconButton, Card, CardHeader, CardMedia, CardContent, CardActions } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks'
 import classnames from 'classnames'
 
 const styles = theme => ({
@@ -44,6 +45,27 @@ class Book extends Component {
     handleExpandClick = () => {
         this.setState(state => ({ expanded: !state.expanded }))
     }
+
+    handleShelf = () => {
+        console.log("Unshelf!")
+    }
+
+    renderShelf = shelf => {
+        if(!shelf) shelf = ""
+        return (
+            <Select
+                value={shelf}
+                onChange={this.handleShelf}
+                displayEmpty
+                name="shelf"
+            >
+                <MenuItem value="">None</MenuItem>
+                <MenuItem value="currentlyReading">Currently reading</MenuItem>
+                <MenuItem value="wantToRead">Want to read</MenuItem>
+                <MenuItem value="read">Read</MenuItem>
+            </Select>
+        )
+    }
     
     render () {
         let { 
@@ -53,10 +75,11 @@ class Book extends Component {
             categories,
             description,
             imageLinks,
-            subtitle
+            subtitle,
+            shelf
         } = this.props
 
-        if(!authors) authors = []
+        if(!authors) authors = ["Unknown"]
         if(!categories) categories = []
 
         let image = <div></div>
@@ -87,6 +110,7 @@ class Book extends Component {
                     </Typography>
                 </CardContent>
                 <CardActions className={classes.actions} disableActionSpacing>
+                    {this.renderShelf(shelf)}
                     <IconButton
                         className={classnames(classes.expand, {
                         [classes.expandOpen]: this.state.expanded,
