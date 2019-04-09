@@ -25,7 +25,7 @@ class SearchView extends Component {
 
     state = {
         searchString: '',
-        books: {}
+        books: []
     }
 
     handleSearch = e => {
@@ -38,12 +38,16 @@ class SearchView extends Component {
     }
 
     searchBooks = searchString => {
-        search(searchString).then( result =>
+        search(searchString).then( result => {
+            let list = []
+            if(result && result.length) {
+                list = result
+            }
             this.setState(prevState => ({
                 ...prevState,
-                books: result
+                books: list
             }))
-        )
+        })
     }
 
     render () {

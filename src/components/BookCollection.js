@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { TextField, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
+
+import Book from './Book'
 
 const styles = {
     rootContainer: {
@@ -25,6 +27,13 @@ class BookCollection extends Component {
 
         return (
             <Grid item xs={12}>
+                {this.props.books.map(book => {
+                    return (
+                        <Book
+                            {...book}
+                        />
+                    )
+                })}
             </Grid>
         )
     }
