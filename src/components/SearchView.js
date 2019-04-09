@@ -34,7 +34,14 @@ class SearchView extends Component {
             ...prevState,
             searchString: newSearchString
         }))
-        this.searchBooks(newSearchString)
+        if(newSearchString.length) {
+            this.searchBooks(newSearchString)
+        } else {
+            this.setState(prevState => ({
+                ...prevState,
+                books: []
+            }))
+        }
     }
 
     searchBooks = searchString => {
