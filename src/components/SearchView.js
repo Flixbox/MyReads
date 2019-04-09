@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { TextField, Grid } from '@material-ui/core'
+import { search } from '../BooksAPI'
 
 const styles = {
     rootContainer: {
@@ -21,8 +22,14 @@ const styles = {
 class SearchView extends Component {
 
     handleSearch = e => {
-        console.log(e)
-        console.log(e.target.value)
+        const searchString = e.target.value
+        this.searchBooks(searchString)
+    }
+
+    searchBooks = searchString => {
+        search(searchString).then(
+            result => console.log(result)
+        )
     }
 
     render () {
