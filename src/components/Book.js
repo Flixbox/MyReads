@@ -6,7 +6,7 @@ import classnames from 'classnames'
 
 const styles = theme => ({
     card: {
-        maxWidth: 400,
+        maxWidth: 400
     },
     media: {
         height: 0,
@@ -28,7 +28,8 @@ const styles = theme => ({
 })
 
 /**
- * This represents a single book.
+ * This represents a single book. 
+ * It provides all the information that was provided to it in an interactive way.
  * 
  * @see https://material-ui.com/demos/cards/
  *  

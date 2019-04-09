@@ -6,7 +6,7 @@ import Book from './Book'
 
 const styles = {
     rootContainer: {
-        padding: "5px"
+        margin: '16px'
     },
     searchField: {
 
@@ -26,12 +26,14 @@ class BookCollection extends Component {
         const { classes } = this.props
 
         return (
-            <Grid item xs={12}>
+            <Grid container spacing={16} className={classes.rootContainer} justify="center">
                 {this.props.books.map(book => {
                     return (
-                        <Book
-                            {...book}
-                        />
+                        <Grid item>
+                            <Book
+                                {...book}
+                            />
+                        </Grid>
                     )
                 })}
             </Grid>
