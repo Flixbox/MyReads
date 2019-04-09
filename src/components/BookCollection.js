@@ -29,7 +29,7 @@ class BookCollection extends Component {
             <Grid container spacing={16} className={classes.rootContainer} justify="center">
                 {this.props.books.map(book => {
                     return (
-                        <Grid item>
+                        <Grid item key={book.id}>
                             <Book
                                 {...book}
                             />

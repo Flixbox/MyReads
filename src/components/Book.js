@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Typography, Collapse, IconButton, Card, CardHeader, CardMedia, CardContent, CardActions } from '@material-ui/core'
+import { Chip, Typography, Collapse, IconButton, Card, CardHeader, CardMedia, CardContent, CardActions } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import classnames from 'classnames'
 
@@ -45,13 +45,18 @@ class Book extends Component {
     }
     
     render () {
-        const { 
+        let { 
             classes,
             title,
+            authors,
+            categories,
             description,
             imageLinks,
             subtitle
         } = this.props
+
+        if(!authors) authors = []
+        if(!categories) categories = []
 
         return (
             <Card className={classes.card}>
@@ -65,9 +70,11 @@ class Book extends Component {
                     title="Book thumbnail"
                 />
                 <CardContent>
+                    {categories.map(category => 
+                        <Chip label={category} key={category} />
+                    )}
                     <Typography component="p">
-                        This impressive paella is a perfect party dish and a fun meal to cook together with your
-                        guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                        {authors.join(', ')}
                     </Typography>
                 </CardContent>
                 <CardActions className={classes.actions} disableActionSpacing>
