@@ -1,19 +1,9 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Button, IconButton, Toolbar, AppBar, Typography } from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { Button, Toolbar, AppBar, Typography } from '@material-ui/core'
+import { Link } from "react-router-dom"
 
 const styles = {
-    list: {
-        width: 250,
-    },
-    fullList: {
-        width: 'auto',
-    },
-    root: {
-        flexGrow: 1,
-    },
     grow: {
         flexGrow: 1,
     },
@@ -26,8 +16,7 @@ const styles = {
 }
 
 /**
- * This code was mostly taken from https://material-ui.com/demos/drawers/.
- * Many adjustments were made.
+ * This element represents the top navigation of the application.
  *  
  * @export
  * @class Navigation
@@ -55,7 +44,6 @@ class Navigation extends Component {
                 <div className={classes.root}>
                     <AppBar position="static">
                         <Toolbar>
-                        
                             <Typography variant="h6" color="inherit" className={classes.grow}>
                                 MyReads
                             </Typography>
