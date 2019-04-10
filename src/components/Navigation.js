@@ -47,10 +47,10 @@ class Navigation extends Component {
                             <Typography variant="h6" color="inherit" className={classes.grow}>
                                 MyReads
                             </Typography>
-                            <Link to="/" className={classes.menuButton}>
+                            <Link to="/" replace className={classes.menuButton}>
                                 <Button color="inherit">Library</Button>
                             </Link>
-                            <Link to="/search" className={classes.menuButton}>
+                            <Link to="/search" replace className={classes.menuButton}>
                                 <Button color="inherit">Search</Button>
                             </Link>
                         </Toolbar>
