@@ -3,6 +3,8 @@ import { withStyles } from '@material-ui/core/styles'
 import {  } from '@material-ui/core'
 import { Route } from "react-router-dom"
 
+import { update } from '../BooksAPI'
+
 import LibraryView from "./LibraryView"
 import SearchView from "./SearchView"
 
@@ -18,13 +20,25 @@ const styles = {
  * @extends {Component}
  */
 class MainView extends Component {
+    updateShelf = (book, shelf) => {
+        update({id: book}, shelf).then(() => {
+            console.log("Updated Book", book)
+            console.log("Updated Shelf", shelf)
+        })
+    }
+
     render () {
         const { classes } = this.props
 
         return (
             <div>
                 <Route exact path="/" component={LibraryView} />
-                <Route path="/search" component={SearchView} />
+                <Route 
+                    path="/search" 
+                    render={
+                        (props) => <SearchView {...props} updateShelf={this.updateShelf} />
+                    }
+                />
             </div>
         )
     }

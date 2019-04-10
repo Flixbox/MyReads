@@ -32,6 +32,7 @@ class BookCollection extends Component {
                         <Grid item key={book.id}>
                             <Book
                                 {...book}
+                                updateShelf={this.props.updateShelf}
                             />
                         </Grid>
                     )

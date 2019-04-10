@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Chip, Typography, Select, MenuItem, Collapse, IconButton, Card, CardHeader, CardMedia, CardContent, CardActions } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks'
 import classnames from 'classnames'
+
+
 
 const styles = theme => ({
     card: {
@@ -46,11 +47,16 @@ class Book extends Component {
         this.setState(state => ({ expanded: !state.expanded }))
     }
 
-    handleShelf = () => {
-        console.log("Unshelf!")
+    handleShelf = (e, child) => {
+        console.log("E", e)
+        console.log("Child", child)
+        console.log("child.props.id", child.props.id)
+        console.log("child.props.value", child.props.value)
+        this.props.updateShelf(child.props.id, child.props.value)
     }
 
-    renderShelf = shelf => {
+    renderShelf = (shelf, id) => {
+        console.log("Shelf", shelf)
         if(!shelf) shelf = ""
         return (
             <Select
@@ -59,16 +65,17 @@ class Book extends Component {
                 displayEmpty
                 name="shelf"
             >
-                <MenuItem value="">None</MenuItem>
-                <MenuItem value="currentlyReading">Currently reading</MenuItem>
-                <MenuItem value="wantToRead">Want to read</MenuItem>
-                <MenuItem value="read">Read</MenuItem>
+                <MenuItem value="" id={id}>None</MenuItem>
+                <MenuItem value="currentlyReading" id={id}>Currently reading</MenuItem>
+                <MenuItem value="wantToRead" id={id}>Want to read</MenuItem>
+                <MenuItem value="read" id={id}>Read</MenuItem>
             </Select>
         )
     }
     
     render () {
         let { 
+            id,
             classes,
             title,
             authors,
@@ -110,7 +117,7 @@ class Book extends Component {
                     </Typography>
                 </CardContent>
                 <CardActions className={classes.actions} disableActionSpacing>
-                    {this.renderShelf(shelf)}
+                    {this.renderShelf(shelf, id)}
                     <IconButton
                         className={classnames(classes.expand, {
                         [classes.expandOpen]: this.state.expanded,

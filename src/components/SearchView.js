@@ -85,6 +85,7 @@ class SearchView extends Component {
                 </Grid>
                 <BookCollection
                     books={this.state.books}
+                    updateShelf={this.props.updateShelf}
                 />
             </Grid>
         )
