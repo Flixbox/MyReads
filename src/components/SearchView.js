@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { TextField, Grid } from '@material-ui/core'
+
 import { search } from '../BooksAPI'
 
 import BookCollection from './BookCollection'
+
+import validTerms from '../search-terms.json'
 
 const styles = {
     rootContainer: {
@@ -40,7 +43,7 @@ class SearchView extends Component {
             ...prevState,
             searchString: newSearchString
         }))
-        if(newSearchString.length) {
+        if(newSearchString.length && this.validateSearchString(newSearchString)) {
             this.searchBooks(newSearchString)
         } else {
             this.setState(prevState => ({
@@ -69,6 +72,13 @@ class SearchView extends Component {
                 }))
             }
         })
+    }
+
+    validateSearchString = searchString => {
+        const { terms } = validTerms
+        return terms
+            .map(t => t.toLowerCase())
+            .includes(searchString.toLowerCase())
     }
 
     render () {
