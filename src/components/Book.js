@@ -8,7 +8,7 @@ import classnames from 'classnames'
 
 const styles = theme => ({
     card: {
-        maxWidth: 400
+        maxWidth: 250
     },
     media: {
         height: 0,
