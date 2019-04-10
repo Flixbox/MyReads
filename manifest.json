@@ -11,6 +11,11 @@
       "src": "book.svg",
       "type": "image/svg",
       "sizes": "any"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
