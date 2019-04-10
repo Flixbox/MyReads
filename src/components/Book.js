@@ -103,7 +103,7 @@ class Book extends Component {
         if(imageLinks) {
             image = <CardMedia
                 className={classes.media}
-                image={imageLinks.thumbnail}
+                image={imageLinks.thumbnail.replace(/^http:\/\//i, 'https://')}
                 title="Book thumbnail"
             />
         }
