@@ -20,7 +20,7 @@ const styles = {
 class LibraryView extends Component {
     shelves = ["currentlyReading", "wantToRead", "read"]
     translation = {
-        "currentlyReading": "Currently Reading",
+        "currentlyReading": "Currently reading",
         "wantToRead": "Want to read",
         "read": "Read"
     }
@@ -29,7 +29,7 @@ class LibraryView extends Component {
         return (
             <Grid container justify="center">
                 <Typography variant="h5" gutterBottom>
-                    {shelf}
+                    {this.translation[shelf]}
                 </Typography>
                 <BookCollection
                     books={books}
