@@ -84,15 +84,18 @@ class Book extends Component {
     }
 
     render () {
-        let { 
+        const { 
             id,
             classes,
             title,
-            authors,
-            categories,
             description,
             imageLinks,
-            subtitle,
+            subtitle
+        } = this.props
+
+        let { 
+            authors,
+            categories,
             shelf
         } = this.props
 
