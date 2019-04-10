@@ -18,7 +18,6 @@ const styles = {
 /**
  * This element represents the top navigation of the application.
  *  
- * @export
  * @class Navigation
  * @extends {Component}
  */
