@@ -4,9 +4,8 @@ MyReads is an application for keeping track of the books you're currently readin
 
 ## Starting the application
 
-* Install yarn
-* Navigate to the repo
-* Run `yarn start`
+* Navigate to the repo.
+* Run `npm start`.
 
 ## Development
 
@@ -14,6 +13,7 @@ While you're running the server, feel free to adjust the files. The server files
 
 ## Deployment
 
+* Install yarn.
 * Configure your GitHub site in `package.json`.
 * Run `yarn run deploy` to deploy the site to GitHub Pages.
 
