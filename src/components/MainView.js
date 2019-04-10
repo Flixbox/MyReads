@@ -27,15 +27,17 @@ class MainView extends Component {
 
     updateShelf = (book, shelf) => {
         update({id: book}, shelf).then(() => {
-            console.log("Updated Book", book)
-            console.log("Updated Shelf", shelf)
             this.getAll()
         })
     }
 
+    /**
+     * This fires off a request to get the user's entire library.
+     *
+     * @memberof MainView
+     */
     getAll = () => {
         getAll().then(books => {
-            console.log("All books: ", books)
             this.setState(prevState => ({
                 ...prevState,
                 books: books
@@ -48,8 +50,6 @@ class MainView extends Component {
     }
 
     render () {
-        const { classes } = this.props
-
         return (
             <div>
                 <Route 

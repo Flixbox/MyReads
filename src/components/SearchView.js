@@ -61,10 +61,13 @@ class SearchView extends Component {
             if(result && result.length) {
                 list = result
             }
-            this.setState(prevState => ({
-                ...prevState,
-                books: list
-            }))
+            if(this.state.searchString) {
+                // Only update the list if the user hasn't emptied the search field.
+                this.setState(prevState => ({
+                    ...prevState,
+                    books: list
+                }))
+            }
         })
     }
 

@@ -11,10 +11,10 @@ const styles = {
 }
 
 /**
- *  This represents the main application next to the navigation component.
+ *  This represents the user's library. It contains several shelves with the user's books.
  *  
  * @export
- * @class MainView
+ * @class LibraryView
  * @extends {Component}
  */
 class LibraryView extends Component {

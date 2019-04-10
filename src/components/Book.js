@@ -48,15 +48,10 @@ class Book extends Component {
     }
 
     handleShelf = (e, child) => {
-        console.log("E", e)
-        console.log("Child", child)
-        console.log("child.props.id", child.props.id)
-        console.log("child.props.value", child.props.value)
         this.props.updateShelf(child.props.id, child.props.value)
     }
 
     renderShelf = (shelf, id) => {
-        console.log("Shelf", shelf)
         if(!shelf) shelf = ""
         return (
             <Select
