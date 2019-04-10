@@ -26,6 +26,7 @@ class MainView extends Component {
     }
 
     updateShelf = (book, shelf) => {
+        if(shelf === "") shelf = "none"
         update({id: book}, shelf).then(() => {
             this.getAll()
         })

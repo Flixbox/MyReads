@@ -43,14 +43,29 @@ const styles = theme => ({
 class Book extends Component {
     state = { expanded: false }
 
+    /**
+     * This is executed when the user expand the book card.
+     *
+     * @memberof Book
+     */
     handleExpandClick = () => {
         this.setState(state => ({ expanded: !state.expanded }))
     }
 
+    /**
+     * This is executed when the user moves a book between shelves.
+     *
+     * @memberof Book
+     */
     handleShelf = (e, child) => {
         this.props.updateShelf(child.props.id, child.props.value)
     }
 
+    /**
+     * This returns a Select element that can be used to move a book between shelves.
+     *
+     * @memberof Book
+     */
     renderShelf = (shelf, id) => {
         if(!shelf) shelf = ""
         return (

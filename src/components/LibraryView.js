@@ -27,7 +27,7 @@ class LibraryView extends Component {
 
     renderShelf = (shelf, books) => {
         return (
-            <Grid container justify="center">
+            <Grid container justify="center" key={shelf}>
                 <Typography variant="h5" gutterBottom>
                     {this.translation[shelf]}
                 </Typography>
