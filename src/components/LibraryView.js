@@ -18,15 +18,40 @@ const styles = {
  * @extends {Component}
  */
 class LibraryView extends Component {
+    shelves = ["currentlyReading", "wantToRead", "read"]
+    translation = {
+        "currentlyReading": "Currently Reading",
+        "wantToRead": "Want to read",
+        "read": "Read"
+    }
+
+    renderShelf = (shelf, books) => {
+        return (
+            <Grid container justify="center">
+                <Typography variant="h5" gutterBottom>
+                    {shelf}
+                </Typography>
+                <BookCollection
+                    books={books}
+                    updateShelf={this.props.updateShelf}
+                />
+            </Grid>
+        )
+    }
+
     render () {
         const { classes } = this.props
 
         return (
             <Grid container className={classes.rootContainer}>
-                <BookCollection
-                    books={this.props.books}
-                    updateShelf={this.props.updateShelf}
-                />
+                {
+                    this.shelves.map(shelf => {
+                        return this.renderShelf(
+                            shelf, 
+                            this.props.books.filter(book => book.shelf === shelf)
+                        )
+                    })
+                }
             </Grid>
         )
     }
