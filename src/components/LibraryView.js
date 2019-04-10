@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import {  } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
+
+import BookCollection from './BookCollection'
 
 const styles = {
-
+    rootContainer: {
+        padding: "5px"
+    }
 }
 
 /**
@@ -18,9 +22,12 @@ class LibraryView extends Component {
         const { classes } = this.props
 
         return (
-            <div>
-                Library
-            </div>
+            <Grid container className={classes.rootContainer}>
+                <BookCollection
+                    books={this.props.books}
+                    updateShelf={this.props.updateShelf}
+                />
+            </Grid>
         )
     }
 }
