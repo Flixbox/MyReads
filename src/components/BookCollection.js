@@ -33,6 +33,7 @@ class BookCollection extends Component {
                             <Book
                                 {...book}
                                 updateShelf={this.props.updateShelf}
+                                searchLibrary={this.props.searchLibrary}
                             />
                         </Grid>
                     )

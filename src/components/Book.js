@@ -82,7 +82,7 @@ class Book extends Component {
             </Select>
         )
     }
-    
+
     render () {
         let { 
             id,
@@ -98,6 +98,7 @@ class Book extends Component {
 
         if(!authors) authors = ["Unknown"]
         if(!categories) categories = []
+        if(!shelf) shelf = this.props.searchLibrary(id)
 
         let image = <div></div>
         if(imageLinks) {

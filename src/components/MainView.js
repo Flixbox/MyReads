@@ -33,6 +33,22 @@ class MainView extends Component {
     }
 
     /**
+     * This is a performance-critical function that searches all shelves for the book.
+     * 
+     * @returns The shelf that this book is on, or an empty string.
+     * @memberof MainView
+     */
+    searchLibrary = (id) => {
+        const result = this.state.books.filter(book => {
+            if(book.shelf && book.id === id) return book.shelf
+            return false
+        })
+        if(result.length) {
+            return result[0].shelf
+        }
+    }
+
+    /**
      * This fires off a request to get the user's entire library.
      *
      * @memberof MainView
@@ -62,6 +78,7 @@ class MainView extends Component {
                                 {...props} 
                                 books={this.state.books} 
                                 updateShelf={this.updateShelf} 
+                                searchLibrary={this.searchLibrary}
                             />
                     }
                 />
@@ -72,6 +89,7 @@ class MainView extends Component {
                             <SearchView 
                                 {...props} 
                                 updateShelf={this.updateShelf} 
+                                searchLibrary={this.searchLibrary}
                             />
                     }
                 />
