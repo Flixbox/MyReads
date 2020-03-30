@@ -14,7 +14,7 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.1.0",
-    "riteway": "^6.0.3"
+    "riteway": "^6.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
